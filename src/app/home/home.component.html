@@ -1,1 +1,26 @@
-<p>home works!</p>
+<app-main-slider></app-main-slider>
+
+<app-categories></app-categories>
+<div class="row">
+
+  <div>
+    <input type="text" [(ngModel)]="searchTerm" placeholder="search By Name ..." class="form-control w-75 mx-auto my-4"
+      name="" id="">
+  </div>
+
+  <div *ngFor="let product of products|search:searchTerm" class="col-md-2 product">
+    <a [routerLink]="['/product-details',product._id]">
+      <img class="w-100" src={{product.imageCover}} alt="">
+    </a>
+    <span class="text-main fw-bold font-sm">{{product.category.name|lowercase}}</span>
+    <h3 class="h6 fw-bolder">{{product.title.split(' ').slice(0,2).join(' ')}}</h3>
+    <div class="d-flex align-items-center justify-content-between">
+      <span class="text-muted fw-bold font-sm">{{product.price|currency:'EGP '}}</span>
+      <div>
+        <i class="fas fa-star rating-color"></i>
+        <span class="text-muted fw-bold font-sm">{{product.ratingsAverage}}</span>
+      </div>
+    </div>
+    <button class="btn bg-main text-white w-100 my-2"> + Add</button>
+  </div>
+</div>

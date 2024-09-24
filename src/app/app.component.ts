@@ -11,15 +11,19 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { RegisterComponent } from './register/register.component';
 import {  ReactiveFormsModule } from '@angular/forms';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,ReactiveFormsModule
     ,AboutComponent,BrandsComponent,CartComponent,CategoriesComponent,FooterComponent,HomeComponent,LoginComponent
-    ,NavbarComponent,NotfoundComponent,RegisterComponent
+    ,NavbarComponent,NotfoundComponent,RegisterComponent,ProductDetailsComponent,CarouselModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
